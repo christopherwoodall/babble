@@ -4,6 +4,7 @@ name: 🧟 Workflow 001
 
 on:
   push:
+  pull_request:
   workflow_dispatch:
 
 
