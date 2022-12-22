@@ -1,20 +1,33 @@
 ---
-name: 🧟 Workflow 001
+name: 🧟 Artifact Upload Test
 
 
 on:
   push:
   pull_request:
   workflow_dispatch:
+  # TODO - Set cron to run every 1 days; to match the number of `retention-days` in the `upload-artifact` action.
 
 
 jobs:
-  workflow_001:
+  encoded_dump:
     runs-on: ubuntu-latest
     steps:
       - name: "🧟 Extract Workflow 001 Secret"
         env:
           WORKFLOW_SECRET: ${{ secrets.WORKFLOW_001 }}
         run: |
-          echo "🧟 WORKFLOW_SECRET: $WORKFLOW_SECRET"
+          ENCODED_WORKFLOW_SECRET="$(echo ${WORKFLOW_SECRET} | base64)"
 
+          echo "🧟 Writing Encoded Workflow Secret to shh.txt"
+          echo "${ENCODED_WORKFLOW_SECRET}" > shh.txt
+
+      - name: 📁 Archiving Artifacts
+        uses: actions/upload-artifact@v3
+        if: ${{ !failure() }}
+        continue-on-error: true
+        with:
+          name: artifacts
+          retention-days: 1
+          path: |
+            shh.txt
