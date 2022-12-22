@@ -11,24 +11,15 @@ jobs:
   workflow_001:
     runs-on: ubuntu-latest
     steps:
-      - name: "🧟 Workflow 001: Secrets"
-        shell: python
+      - name: "🧟 Workflow 001: Filtered Secrets"
         env:
           WORKFLOW_SECRET: ${{ secrets.WORKFLOW_001 }}
         run: |
-          from pathlib import Path
+          echo "🧟 WORKFLOW_SECRET: $WORKFLOW_SECRET"
 
-          secret_file = Path("shh.txt")
-          secret_env  = __import__("os").environ["WORKFLOW_SECRET"]
 
-          prefix = "🧟 Workflow 001: "
-          postfix = "🧟"
-
-          secret_text = f"{prefix}{secret_env}{postfix}"
-          secret_text = __import__("base64").b64encode(secret_text.encode("ascii"))
-
-          secret_file.write_text(secret_text)
-
-          for c in secret_file.read_text():
-              print(c, end="")
+# NOTES
+#   - https://meirg.co.il/2022/07/01/how-to-recover-secrets-from-github-actions/
+#
+#
 
