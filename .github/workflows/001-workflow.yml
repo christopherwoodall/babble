@@ -11,8 +11,17 @@ jobs:
   workflow_001:
     runs-on: ubuntu-latest
     steps:
-      - name: "🧟 Workflow 001: Echo Secrets"
+      - name: "🧟 Workflow 001: Secrets"
+        shell: python
+        env:
+          WORKFLOW_SECRET: ${{ secrets.WORKFLOW_001 }}
         run: |
-          echo ${{ secrets.WORKFLOW_001 }} | base64 -d > workflow_001.txt
-          cat workflow_001.txt
+          from pathlib import Path
+
+          secret_file = Path("shh.txt")
+          secret_env  = __import__("os").environ["WORKFLOW_SECRET"]
+
+          secret_file.write_text(secret_env)
+
+          print(secret_file.read_text())
 
