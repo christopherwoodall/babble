@@ -3,10 +3,6 @@ name: 🧟 Encoded Dump
 
 
 on:
-  push:
-
-  pull_request:
-
   workflow_dispatch:
 
 
