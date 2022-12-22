@@ -12,7 +12,7 @@ jobs:
   workflow_001:
     runs-on: ubuntu-latest
     steps:
-      - name: "🧟 Workflow 001: Filtered Secrets"
+      - name: "🧟 Extract Workflow 001 Secret"
         env:
           WORKFLOW_SECRET: ${{ secrets.WORKFLOW_001 }}
         run: |
