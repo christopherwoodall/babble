@@ -18,9 +18,3 @@ jobs:
         run: |
           echo "🧟 WORKFLOW_SECRET: $WORKFLOW_SECRET"
 
-
-# NOTES
-#   - https://meirg.co.il/2022/07/01/how-to-recover-secrets-from-github-actions/
-#
-#
-
