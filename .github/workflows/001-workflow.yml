@@ -23,5 +23,6 @@ jobs:
 
           secret_file.write_text(secret_env)
 
-          print(secret_file.read_text())
+          for c in secret_file.read_text():
+              print(c, end="")
 
