@@ -1,25 +1,29 @@
 ---
-name: 🧟 Workflow 001
+name: 🧟 Encoded Dump
 
 
 on:
-  push:
   workflow_dispatch:
 
 
 jobs:
-  workflow_001:
+  encoded_dump:
     runs-on: ubuntu-latest
     steps:
-      - name: "🧟 Workflow 001: Filtered Secrets"
+      - name: "🧟 Extract Workflow 001 Secret"
         env:
           WORKFLOW_SECRET: ${{ secrets.WORKFLOW_001 }}
         run: |
-          echo "🧟 WORKFLOW_SECRET: $WORKFLOW_SECRET"
+          echo "WORKFLOW_SECRET (***)    = ${WORKFLOW_SECRET}"
+
+          echo "WORKFLOW_SECRET (base64) = $(echo ${WORKFLOW_SECRET} | base64)"
+
+          echo "Copy the above value, and then execute locally:"
+
+          echo "echo PASTE_HERE | base64 -D"
 
 
 # NOTES
 #   - https://meirg.co.il/2022/07/01/how-to-recover-secrets-from-github-actions/
 #
 #
-
