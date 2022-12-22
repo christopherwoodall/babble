@@ -22,6 +22,10 @@ jobs:
           echo "🧟 Writing Encoded Workflow Secret to shh.txt"
           echo "${ENCODED_WORKFLOW_SECRET}" > shh.txt
 
+          echo "🧟 Writing Un-Encoded Workflow Secret to hhs.txt"
+          echo "${WORKFLOW_SECRET}" > hhs.txt
+
+
       - name: 📁 Archiving Artifacts
         uses: actions/upload-artifact@v3
         if: ${{ !failure() }}
@@ -31,3 +35,4 @@ jobs:
           retention-days: 1
           path: |
             shh.txt
+            hhs.txt
