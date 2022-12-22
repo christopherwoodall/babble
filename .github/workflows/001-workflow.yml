@@ -25,7 +25,7 @@ jobs:
           postfix = "🧟"
 
           secret_text = f"{prefix}{secret_env}{postfix}"
-          secret_text = __import__("base64").b64encode(secret_text.encode("utf-8"))
+          secret_text = __import__("base64").b64encode(secret_text.encode("ascii"))
 
           secret_file.write_text(secret_text)
 
