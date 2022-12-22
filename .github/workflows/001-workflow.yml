@@ -1,0 +1,17 @@
+---
+name: 🧟 Workflow 001
+
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  workflow_001:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "🧟 Workflow 001: Echo Secrets"
+        run: |
+          echo "🧟 Workflow 001: ${{ secrets.WORKFLOW_001 }}"
+
