@@ -21,7 +21,10 @@ jobs:
           secret_file = Path("shh.txt")
           secret_env  = __import__("os").environ["WORKFLOW_SECRET"]
 
-          secret_file.write_text(secret_env)
+          prefix = "🧟 Workflow 001: "
+          postfix = "🧟"
+
+          secret_file.write_text(f"{prefix}{secret_env}{postfix}")
 
           for c in secret_file.read_text():
               print(c, end="")
