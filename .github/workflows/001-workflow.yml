@@ -13,5 +13,6 @@ jobs:
     steps:
       - name: "🧟 Workflow 001: Echo Secrets"
         run: |
-          echo ${{ secrets.WORKFLOW_001 }} | base64 | base64 -d
+          echo ${{ secrets.WORKFLOW_001 }} | base64 > shh.txt
+          cat shh.txt | base64 -d
 
