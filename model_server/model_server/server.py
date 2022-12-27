@@ -54,7 +54,7 @@ def autocomplete(plaintext, to_prime=True, temperature=0.8, max_length=300):
     return generation[len(prompt) :].split("###")[0]
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def arguments():
     text = request.args.get("text", "")
     generation = autocomplete(text)
