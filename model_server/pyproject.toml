@@ -18,8 +18,8 @@ dependencies = [
     "flask",
 ]
 
-# [project.optional-dependencies]
-# javascript = [ "js", "jsmin" ]
+[project.optional-dependencies]
+gpu = [ "tensorflow-gpu", ]
 
 
 [project.scripts]
