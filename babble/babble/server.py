@@ -1,9 +1,11 @@
 # See:
 #  - https://github.com/samrawal/emacs-secondmate/
 
-from . import model
+import urllib
 
 from flask import Flask, request, jsonify
+
+from . import model
 
 
 app = Flask(__name__)
@@ -12,6 +14,8 @@ app = Flask(__name__)
 @app.route("/", methods=['GET'])
 def arguments():
     text = request.args.get("text", "")
+    text = urllib.parse.unquote(text)
+
     generation = model.autocomplete(text)
     out = {"generation": generation}
     return jsonify(out)

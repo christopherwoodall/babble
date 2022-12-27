@@ -24,30 +24,29 @@ generator = pipeline(
 )
 
 
-def autocomplete(query: str, to_prime: bool = True, temperature: float = 0.8, max_length: int = 300):
-    # prompt = prime + query if to_prime else query
-    prompt = query
-    generation = generator(prompt, do_sample=True, min_length=50, max_new_tokens=128)
-    return generation
-
-
 # TODO: Prompt pipeline with some context; e.g. prepending input to provide more context.
 # Anecdotally, this helps, but may not need for larger models.
-# prime = '''
-# def is_palendrome(s):
-#     """Check whether a string is a palindrome"""
-#     for i in range(len(s) - 1, -1, -1):
-#         if s[i + 1] == s[i]:
-#             return False
-#     return True
-# ###
-# def is_even(i):
-#     """Check whether an integer is even"""
-#     return i % 2
-# ###
-# def square_root(i):
-#     """Return the square root of an integer"""
-#     return math.sqrt(i)
-# ###
-# '''
+prime = '''
+def is_palendrome(s):
+    """Check whether a string is a palindrome"""
+    for i in range(len(s) - 1, -1, -1):
+        if s[i + 1] == s[i]:
+            return False
+    return True
+###
+def is_even(i):
+    """Check whether an integer is even"""
+    return i % 2
+###
+def square_root(i):
+    """Return the square root of an integer"""
+    return math.sqrt(i)
+###
+'''
+
+
+def autocomplete(query: str, to_prime: bool = True, temperature: float = 0.8, max_length: int = 300):
+    prompt = prime + query if to_prime else query
+    generation = generator(prompt, do_sample=True, min_length=50, max_new_tokens=128)
+    return generation
 
