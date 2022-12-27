@@ -14,7 +14,7 @@ def input_loop():
   while (user_input := input("QUERY: ")) != 'q':
     print(f'You typed: {user_input}')
     try:
-      generation = server.autocomplete(user_input)
+      generation = model.autocomplete(user_input)
     except Exception as e:
       print(f'Error: {e}')
       generation = 'FAILED'

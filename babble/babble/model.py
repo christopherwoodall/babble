@@ -18,9 +18,9 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 generator = pipeline(
     task='text-generation',
-    model=model_name,
-    # model=model,
-    # tokenizer=tokenizer,
+    # model=model_name,
+    model=model,
+    tokenizer=tokenizer,
     device=device,
 )
 
@@ -29,7 +29,6 @@ def autocomplete(plaintext, to_prime=True, temperature=0.8, max_length=300):
     # prompt = prime + plaintext if to_prime else plaintext
     prompt = plaintext
     generation = generator(prompt, do_sample=True, min_length=50, max_new_tokens=128)
-    # return generation[len(prompt) :].split("###")[0]
     return generation
 
 
