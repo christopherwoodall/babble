@@ -1,4 +1,13 @@
-# Code Suggestion & Generation
+# Work In Progress!
+![](docs/assets/babble-test-2.gif)
+
+![](docs/assets/babble-test-1.gif)
+
+
+---
+# Notes
+
+## Code Suggestion & Generation
 
 ### Suggestion
 E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc229/copilot-clone/).
