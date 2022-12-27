@@ -15,7 +15,7 @@ python3 -m pip install -e .
 ## Testing
 
 ```
-start
+start-server
 
 ```
 
