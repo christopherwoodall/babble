@@ -23,5 +23,5 @@ dependencies = [
 
 
 [project.scripts]
-start-server = "code.model_server.ephemeral:main"
+start-server = "model_server.ephemeral:main"
 

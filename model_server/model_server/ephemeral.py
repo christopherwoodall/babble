@@ -1,11 +1,11 @@
 
-import model_server
+from . import server
 
 
 
 def main():
   print('Hello, ephemeral world!')
-  code.model_server.server.serve()
+  server.serve()
 
 
 if __name__ == '__main__':
