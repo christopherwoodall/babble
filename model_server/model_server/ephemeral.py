@@ -10,6 +10,7 @@ def input_loop():
     print(f'You typed: {user_input}')
     generation = server.autocomplete(user_input)
     print(f'Generation: {generation}')
+  return
 
 
 def main():
