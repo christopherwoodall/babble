@@ -1,16 +1,22 @@
 # See:
 #  - https://github.com/samrawal/emacs-secondmate/
 
+
+import torch
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
 
-device = "cuda"  # "cpu" or "cuda" or "cuda:n" where n is specific GPU to use
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
 modelname = "EleutherAI/gpt-neo-2.7B"
+
 tokenizer = AutoTokenizer.from_pretrained(modelname)
 model = AutoModelForCausalLM.from_pretrained(modelname)
+
 model.to(device)
 
 

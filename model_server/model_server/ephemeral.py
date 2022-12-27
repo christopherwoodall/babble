@@ -15,10 +15,11 @@ def input_loop():
 
 def main():
   print('Hello world!')
-  input_thread = Thread(target=input_loop, args=())
-  input_thread.start()
-  server.serve()
-  input_thread.join()
+  # input_thread = Thread(target=input_loop, args=())
+  # input_thread.start()
+  # server.serve()
+  # input_thread.join()
+  input_loop()
 
 
 if __name__ == '__main__':
