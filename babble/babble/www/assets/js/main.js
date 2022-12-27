@@ -26,6 +26,7 @@ document.querySelector("form").onsubmit = (event) => {
             console.log(response.generation);
             response.generation.forEach((res) => {
               console.log(res);
+              output_element.value = res['generated_text'] + output_element.value;
             });
           });
       }
