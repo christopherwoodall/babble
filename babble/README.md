@@ -48,4 +48,5 @@ Thanks to xxy1836 for the workaround.
 ## Links
   - https://www.kdnuggets.com/2021/07/github-copilot-open-source-alternatives-code-generation.html
   - https://github.com/samrawal/emacs-secondmate/
-
+  - ELK/KQL
+    - https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/master/salt/soc/files/soc/hunt.queries.json
