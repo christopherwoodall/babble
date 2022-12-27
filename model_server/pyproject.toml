@@ -19,9 +19,8 @@ dependencies = [
 ]
 
 # [project.optional-dependencies]
-# cpu = [ "tensorflow", ]
+# javascript = [ "js", "jsmin" ]
 
 
 [project.scripts]
 start-server = "model_server.ephemeral:main"
-
