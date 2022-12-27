@@ -1,25 +1,24 @@
 # See:
+#  - https://github.com/kingoflolz/mesh-transformer-jax/
 #  - https://github.com/samrawal/emacs-secondmate/
 
 
 import torch
 
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from flask import Flask, request, jsonify
 
-app = Flask(__name__)
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
+# app = Flask(__name__)
 
-# device = "cuda" if torch.cuda.is_available() else "cpu"
-device = "cpu"
-modelname = "EleutherAI/gpt-neo-2.7B"
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model_name = "EleutherAI/gpt-neo-2.7B"
 
-tokenizer = AutoTokenizer.from_pretrained(modelname)
-model = AutoModelForCausalLM.from_pretrained(modelname)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
 
-model.to(device)
-
+breakpoint()
 
 # Prepend to input to provide more context. Anecdotally, this helps.
 # May not need for larger models.
@@ -61,18 +60,18 @@ def autocomplete(plaintext, to_prime=True, temperature=0.8, max_length=300):
     return generation[len(prompt) :].split("###")[0]
 
 
-@app.route("/", methods=['GET'])
-def arguments():
-    text = request.args.get("text", "")
-    generation = autocomplete(text)
-    out = {"generation": generation}
-    return jsonify(out)
+# @app.route("/", methods=['GET'])
+# def arguments():
+#     text = request.args.get("text", "")
+#     generation = autocomplete(text)
+#     out = {"generation": generation}
+#     return jsonify(out)
 
 
-def serve():
-    app.run(
-        host="0.0.0.0",
-        port="9900",
-        debug=True,
-    )
+# def serve():
+#     app.run(
+#         host="0.0.0.0",
+#         port="9900",
+#         debug=True,
+#     )
 

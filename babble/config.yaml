@@ -14,5 +14,7 @@ service:
 
 prompt:
   - prefix: "$$BEGIN$$"
+  # - context: "LINES BEFORE AND AFTER"
+  # - query: "QUERY"
   - suffix: "$$END$$"
 

@@ -16,6 +16,9 @@ dependencies = [
     "flask",
     "torch",
     "tensorflow",
+    "tensorflow-datasets",
+    "tensorflow-io",
+    "tensorflow-text",
     "transformers",
 ]
 
