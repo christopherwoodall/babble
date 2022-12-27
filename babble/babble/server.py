@@ -1,10 +1,10 @@
 # See:
 #  - https://github.com/samrawal/emacs-secondmate/
 
-from flask import Flask, request, jsonify
+# from flask import Flask, request, jsonify
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # @app.route("/", methods=['GET'])
 # def arguments():
