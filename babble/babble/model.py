@@ -33,7 +33,7 @@ generator = pipeline(
 def autocomplete(query: str, to_prime: bool = True, temperature: float = 0.8, max_length: int = 300):
     # TODO: Prompt pipeline with some context; e.g. prepending input to provide more context.
     # Anecdotally, this helps, but may not need for larger models.
-    prefix = f"{prompt_pipeline.get(query)}\n\n$$INJECTION_END$$\n"
+    prefix = prompt_pipeline.get(query)
     prompt = prefix + query if to_prime else query
     generation = generator(prompt, do_sample=True, min_length=50, max_new_tokens=128)
     return generation
