@@ -13,9 +13,9 @@ readme      = "README.md"
 license     = "MIT"
 
 dependencies = [
+    "flask",
     "torch",
     "transformers",
-    "flask",
 ]
 
 [project.optional-dependencies]
