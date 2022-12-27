@@ -1,23 +1,26 @@
 # See:
 #  - https://github.com/samrawal/emacs-secondmate/
 
-# from flask import Flask, request, jsonify
+from . import model
+
+from flask import Flask, request, jsonify
 
 
-# app = Flask(__name__)
-
-# @app.route("/", methods=['GET'])
-# def arguments():
-#     text = request.args.get("text", "")
-#     generation = autocomplete(text)
-#     out = {"generation": generation}
-#     return jsonify(out)
+app = Flask(__name__)
 
 
-# def serve():
-#     app.run(
-#         host="0.0.0.0",
-#         port="9900",
-#         debug=True,
-#     )
+@app.route("/", methods=['GET'])
+def arguments():
+    text = request.args.get("text", "")
+    generation = model.autocomplete(text)
+    out = {"generation": generation}
+    return jsonify(out)
+
+
+def serve(port: int = 9900):
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        # debug=True,
+    )
 
