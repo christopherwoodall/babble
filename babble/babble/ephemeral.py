@@ -33,14 +33,13 @@ def input_loop():
 def main():
   # action = EphemeralAction()
   print('Hello world!')
-  server_thread = Thread(target=server.serve, args=(9900,), daemon=True)
-  input_thread = Thread(target=input_loop, args=())
-
-  server_thread.start()
-  input_thread.start()
-
-  server_thread.join()
-  server_thread.join()
+  server.serve(9900)
+  # server_thread = Thread(target=server.serve, args=(9900,), daemon=True)
+  # input_thread = Thread(target=input_loop, args=())
+  # server_thread.start()
+  # input_thread.start()
+  # server_thread.join()
+  # server_thread.join()
 
 
 if __name__ == '__main__':
