@@ -22,7 +22,7 @@ python3 -m pip install -e .[gpu]
 ## Testing
 
 ```
-start-server
+babble
 
 ```
 

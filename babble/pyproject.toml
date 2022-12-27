@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 requires-python = ">=3.8"
 version = "0.0.1"
 
-name        = "code"
+name        = "babble"
 description = ""
 readme      = "README.md"
 license     = "MIT"
@@ -23,4 +23,4 @@ gpu = [ "tensorflow-gpu", ]
 
 
 [project.scripts]
-start-server = "model_server.ephemeral:main"
+babble = "babble.ephemeral:main"
