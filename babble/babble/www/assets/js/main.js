@@ -12,8 +12,11 @@ document.querySelector("form").onsubmit = (event) => {
     let query_element = document.getElementById("query_text");
     let output_element = document.getElementById("output");
 
+    query_element.value = "";
+    output_element.value = "";
+
     query_element.addEventListener("keyup", (event) => {
-      let query_text = event.target.value.trim()
+      let query_text = encodeURIComponent(event.target.value.trim());
 
       if(query_text.length > 4) {
         console.log(`Key pressed: ${event.key}`);
