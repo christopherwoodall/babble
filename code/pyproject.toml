@@ -7,23 +7,21 @@ build-backend = "hatchling.build"
 requires-python = ">=3.8"
 version = "0.0.1"
 
-name        = "ttlg"
+name        = "code"
 description = ""
 readme      = "README.md"
 license     = "MIT"
 
 dependencies = [
-    "TikTokApi",
-    # python -m playwright install
-
-    # "transformers",
-    # "tensorflow-gpu",
+    "torch",
+    "transformers",
+    "flask",
 ]
 
 # [project.optional-dependencies]
 # cpu = [ "tensorflow", ]
 
 
-# [project.scripts]
-# ttlg = "ttlg.cli.ephemeral:main"
+[project.scripts]
+start-server = "code.server.ephemeral:main"
 
