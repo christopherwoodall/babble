@@ -1,11 +1,18 @@
 ---
 
+
 install:
   - directory: ~/model_server
+
 
 service:
   - port: 8080
     type: http
     name: model_server
     command: python3 -m http.server 8080
+
+
+prompt:
+  - prefix: "$$BEGIN$$"
+  - suffix: "$$END$$"
 

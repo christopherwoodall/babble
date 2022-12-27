@@ -11,7 +11,8 @@ app = Flask(__name__)
 
 
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+device = "cpu"
 modelname = "EleutherAI/gpt-neo-2.7B"
 
 tokenizer = AutoTokenizer.from_pretrained(modelname)
