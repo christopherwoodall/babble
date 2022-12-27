@@ -1,5 +1,12 @@
 # Code Suggestion & Generation
 
+### Suggestion
+E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc229/copilot-clone/).
+
+
+### Generation
+
+
 ---
 ## Installation
 
@@ -23,6 +30,4 @@ start-server
 ## Links
   - https://www.kdnuggets.com/2021/07/github-copilot-open-source-alternatives-code-generation.html
   - https://github.com/samrawal/emacs-secondmate/
-  - https://github.com/hieunc229/copilot-clone/
-    i. Searches StackOverflow for answers
 
