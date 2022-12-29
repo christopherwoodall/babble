@@ -60,6 +60,6 @@ RUN git clone https://github.com/Security-Onion-Solutions/securityonion.git . &&
 
 ####################################################################
 # NOTES:
-# docker pull security-onion-solutions/so-elasticsearch:latest
+# docker pull ghcr.io/security-onion-solutions/so-elasticsearch:2.4.0
+# docker pull ghcr.io/security-onion-solutions/so-kibana:2.4.0
 #
-
