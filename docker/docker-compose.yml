@@ -3,6 +3,7 @@ version: "3"
 
 services:
   security-onion:
+    hostname: security-onion-web
     container_name: securityonion
     image: securityonion:latest
 
