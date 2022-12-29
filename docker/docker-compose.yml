@@ -1,0 +1,25 @@
+---
+version: "3"
+
+services:
+  security-onion:
+    container_name: securityonion
+    image: securityonion:latest
+
+    build:
+     context: ../
+     dockerfile: ./Dockerfile
+
+    # command: ['bash -c "while true; do echo I am afraid I cannot let you do that...; sleep 1; done"']
+
+    ports:
+      - 22:2222
+      - 80:8080
+      - 443:8443
+
+    # volumes:
+    #   - ../:/app
+
+
+# docker-compose --file docker-compose.yml up -d --build security-onion
+# docker-compose exec security-onion /bin/bash
