@@ -7,22 +7,27 @@
 ---
 ## Installation
 
+### Docker
+
+```bash
+export SPLUNKBASE_USERNAME=<YOUR USERNAME>
+export SPLUNKBASE_PASSWORD=<YOUR PASSWORD>
+docker compose up
+# Navigate to http://localhost:8000
 ```
+
+
+### Python
+
+```bash
 python3 -m pip install venv
 python3 -m venv venv
-. venv/bin/activate
+source venv/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install -e .
-```
-
-
----
-## Testing
-
-```
 babble
-
 ```
+
 ---
 # Notes
 
