@@ -59,6 +59,10 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
   - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
 
 
+### Environments
+  - https://github.com/clong/DetectionLab
+
+
 ---
 ## Links
   - https://www.kdnuggets.com/2021/07/github-copilot-open-source-alternatives-code-generation.html
