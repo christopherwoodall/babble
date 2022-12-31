@@ -37,6 +37,7 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
 ---
 ## Datasets
 ### PCAP
+  - https://www.malware-traffic-analysis.net/about.html
   - https://wiki.wireshark.org/SampleCaptures
   - https://github.com/sbousseaden/PCAP-ATTACK
   - https://github.com/elcabezzonn/Pcaps
