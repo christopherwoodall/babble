@@ -1,8 +1,10 @@
 venv/
 __private__/
 
-# TODO: Add .gitkeep and ignore the rest in splunk/[etc|var]
+
 data/splunk/
+!data/splunk/etc/.gitkeep
+!data/splunk/var/.gitkeep
 
 
 # Byte-compiled / optimized / DLL files
