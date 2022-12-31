@@ -2,8 +2,9 @@ venv/
 __private__/
 
 
-data/splunk/
+data/splunk/etc/*
 !data/splunk/etc/.gitkeep
+data/splunk/var/*
 !data/splunk/var/.gitkeep
 
 
