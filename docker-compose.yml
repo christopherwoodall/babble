@@ -4,7 +4,8 @@ services:
 
     environment:
       - SPLUNK_START_ARGS=--accept-license
-      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/1809/releases/8.1.0/download/?origin=sb&lead=true
+      # Install the Stream and Zeek apps from Splunkbase.
+      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/1809/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
       - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER:-splunk}
       - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS:-changeme}
       - SPLUNK_USER=root
@@ -16,6 +17,7 @@ services:
       - ./data:/data:z
       - ./data/splunk/var:/opt/splunk/var:z
       - ./data/splunk/etc:/opt/splunk/etc:z
+
 
     ports:
       - 8000:8000
