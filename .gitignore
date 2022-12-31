@@ -1,6 +1,9 @@
 venv/
 __private__/
 
+# TODO: Add .gitkeep and ignore the rest in splunk/[etc|var]
+data/splunk/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
