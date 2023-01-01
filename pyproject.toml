@@ -9,7 +9,7 @@ version = "0.0.1"
 
 name        = "babble"
 description = ""
-readme      = "README.md"
+readme      = ".github/README.md"
 license     = "MIT"
 
 dependencies = [
