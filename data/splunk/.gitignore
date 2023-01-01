@@ -31,7 +31,3 @@ etc/apps/Splunk_TA_zeek/*
 etc/apps/Splunk_TA_zeek/local/*
 !etc/apps/Splunk_TA_zeek/local/inputs.conf
 !etc/apps/Splunk_TA_zeek/local/props.conf
-
-
-# var/*
-# !var/.gitkeep
