@@ -2,16 +2,9 @@
 venv/
 __private__/
 
+
 # Splunk Settings & Data
 !data/splunk/.gitignore
-
-# data/splunk/etc/*
-# !data/splunk/etc/.gitkeep
-# !data/splunk/etc/splunk-launch.conf
-# !data/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf
-
-# data/splunk/var/*
-# !data/splunk/var/.gitkeep
 
 
 # Byte-compiled / optimized / DLL files
