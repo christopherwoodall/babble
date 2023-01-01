@@ -22,6 +22,7 @@ services:
       - DEBUG=true
 
     volumes:
+      - ./default.yml:/tmp/defaults/default.yml:z
       - ./data:/data:z
       - ./data/splunk/var:/opt/splunk/var:z
       - ./data/splunk/etc:/opt/splunk/etc:z
@@ -39,4 +40,4 @@ services:
 
 # NOTES:
 #  - https://splunk.github.io/docker-splunk/advanced/APP_INSTALL.html#volume-mount-app-directory
-#
+#  - https://splunk.github.io/docker-splunk/ADVANCED.html#runtime-configuration
