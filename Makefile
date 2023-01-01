@@ -102,6 +102,11 @@ lint: ## Lint the code
 -	$(call Lint,./babble)
 
 
+.PHONY: clean
+clean: ## Remove build, test, coverage and Python artifacts
+-	rm -rf ./logs
+
+
 .PHONY: windows
 windows: ## WIP: Install Windows dependencies
 -	$(error This feature is not yet available.)
