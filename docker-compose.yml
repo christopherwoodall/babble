@@ -9,25 +9,26 @@ services:
     profiles: ["model-server"]
     restart: always
     working_dir: /app
+
     volumes:
       - ./:/app:z
+
     ports:
       - 9000:9000
+
     command: >
       /bin/bash -c " \
-        apt-get update && \
-        apt-get install -y git python3.9 python3-pip && \
-        python3 -m pip install --upgrade pip && \
-        python3 -m pip install -e . && \
-      python3 -m babble"
+        apt-get update                                && \
+        apt-get install -y git python3.9 python3-pip  && \
+        python3 -m pip install --upgrade pip          && \
+        python3 -m pip install -e .                   && \
+      babble"
 
 
   # docker compose --profile test-siem up
   splunk:
     image: splunk/splunk:latest
     profiles: ["test-siem"]
-    # depends_on:
-    #   - babble
 
     environment:
       - SPLUNK_START_ARGS=--accept-license
