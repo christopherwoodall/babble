@@ -20,13 +20,9 @@ services:
       - ./data/splunk/etc:/opt/splunk/etc:z
       # - ./data/splunk/etc/splunk-launch.conf:/opt/splunk/etc/splunk-launch.conf:z
 
-
     ports:
       - 8000:8000
 
-
-  # splunk-uf:
-  #   image: splunk/splunk/universalforwarder:latest
 
 # Documentation:
 #  - https://hub.docker.com/r/splunk/splunk/
