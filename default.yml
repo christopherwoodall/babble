@@ -1,6 +1,33 @@
 ---
 # https://splunk.github.io/docker-splunk/ADVANCED.html#runtime-configuration
 
+docker: true
+
+splunk_home_ownership_enforcement: false
+splunkbase_password: null
+splunkbase_token: null
+splunkbase_username: null
+wait_for_splunk_retry_num: 60
+hide_password: false
+retry_delay: 6
+retry_num: 60
+
+java_download_url: null
+java_update_version: null
+java_version: null
+
+
+splunk:
+  admin_user: admin
+  app_paths:
+    default: /opt/splunk/etc/apps
+  disable_popups: true
+  exec: /opt/splunk/bin/splunk
+  group: splunk
+  home: /opt/splunk
+  http_port: 8000
+
+
 config:
   baked: default.yml
   defaults_dir: /tmp/defaults
@@ -15,30 +42,3 @@ config:
   max_delay: 60
   max_retries: 3
   max_timeout: 1200
-
-docker: true
-
-hide_password: false
-
-java_download_url: null
-java_update_version: null
-java_version: null
-
-retry_delay: 6
-retry_num: 60
-
-splunk:
-  admin_user: admin
-  app_paths:
-    default: /opt/splunk/etc/apps
-  disable_popups: true
-  exec: /opt/splunk/bin/splunk
-  group: splunk
-  home: /opt/splunk
-  http_port: 8000
-
-splunk_home_ownership_enforcement: false
-splunkbase_password: null
-splunkbase_token: null
-splunkbase_username: null
-wait_for_splunk_retry_num: 60
