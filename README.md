@@ -1,4 +1,32 @@
 # Work In Progress!
+---
+## Installation
+
+### Docker
+
+```bash
+export SPLUNKBASE_USERNAME=<YOUR USERNAME>
+export SPLUNKBASE_PASSWORD=<YOUR PASSWORD>
+docker compose up
+# Navigate to http://localhost:8000
+```
+
+
+### Python
+
+```bash
+python3 -m pip install venv
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -e .
+babble
+```
+
+
+---
+# DEMO
+
 ![](docs/assets/babble-test-2.gif)
 
 ![](docs/assets/babble-test-1.gif)
@@ -15,42 +43,33 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
 
 ### Generation
 
-
 ---
-## Installation
+## Datasets
+### PCAP
+  - https://github.com/splunk/attack_data
+  - https://github.com/splunk/botsv3
+  - https://www.malware-traffic-analysis.net/about.html
 
-```
-python3 -m pip install venv
-python3 -m venv venv
-. venv/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install -e .
-```
+  - https://wiki.wireshark.org/SampleCaptures
+    - `slammer.pcap` -> Slammer worm DCE RPC
+    - `dns-remoteshell.pcap` -> Remote shell riding on DNS
 
----
-## Testing
+  - https://github.com/elcabezzonn/Pcaps
+    - `sharp-no-psexec.pcap`
+    - `wmi_commands_calc.pcap`
+    - `winrm_psremote_05-16.pcap`
 
-```
-babble
+  - https://github.com/sbousseaden/PCAP-ATTACK
 
-```
+  - https://www.netresec.com/?page=PcapFiles
 
----
-## NOTES
-### Workaround for Tensorflow error ""
-```
-you may be able to use the workaround posted by another user. Create a symbolic link to the (incorrect) version library, and if you’re on WSL2 Linux like me, add or export the LD_LIBRARY_PATH. I did this:
 
-(kohya) nano@DESKTOP-73RPGPM:~/kohya_ss$ find / -name libnvinfer.so.8
-/home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/libnvinfer.so.8
+### EVTX
+  - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES
 
-sudo ln -s /home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/libnvinfer.so.8 /home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/libnvinfer.so.7
-sudo ln -s /home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.8 /home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/libnvinfer_plugin.so.7
-libnvinfer_plugin.so.7
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/nano/anaconda3/envs/kohya/lib/python3.10/site-packages/tensorrt/
 
-Thanks to xxy1836 for the workaround.
-```
+### Environments
+  - https://github.com/clong/DetectionLab
 
 
 ---
