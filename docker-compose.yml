@@ -54,3 +54,8 @@ services:
 
     ports:
       - 8000:8000
+
+
+# NOTES:
+#  - https://splunk.github.io/
+#
