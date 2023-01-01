@@ -30,7 +30,7 @@ fi
 
 if [[ -z "${1}" ]]; then
   echo "No pcap file specified. Running Zeek on all pcaps in $PCAP_DIR"
-  PCAP_FILES=`find $PCAP_DIR -type f -name "*.pcap"`
+  PCAP_FILES=`find ${PCAP_DIR}/unprocessed_files -type f -name "*.pcap"`
   for PCAP_FILE in $PCAP_FILES; do
     $0 $PCAP_FILE
   done
@@ -57,6 +57,8 @@ else
           --readfile /${PCAP_FILE}   \
           LogAscii::use_json=T       \
           local
+
+      mv $PCAP_FILE "${PCAP_DIR}/finished_pcaps/${FILENAME}"
     fi
   popd
 fi
