@@ -7,8 +7,9 @@ if ! command -v git &> /dev/null; then
 fi
 
 PROJECT_ROOT=`git rev-parse --show-toplevel`
-PCAP_DIR="data/ingest/pcap/finished_pcaps"
+PCAP_DIR="${PROJECT_ROOT}/data/ingest/pcap/finished_pcaps"
 ZEEK_DOCKER_IMAGE="zeekurity/zeek:latest"
+ZEEK_COMMAND="zeek -C -r ${PCAP_DIR}/${PCAP_FILE} LogAscii::use_json=T"
 
 # Fixes Github Action error, "tput: No value for $TERM and no -T specified",
 # that occurs When $TERM is empty (non-interactive shell) by faking a value
@@ -33,20 +34,22 @@ pushd $PROJECT_ROOT
   else
     PCAP_FILE=$1
     echo "Running Zeek on ${PCAP_FILE}"
-    echo docker run \
-      --rm \
-      -v $PCAP_DIR:/data/pcap \
-      -v $PROJECT_ROOT/data/ingest/zeek:/data/zeek \
-      $ZEEK_DOCKER_IMAGE \
-      -C \
-      -r /data/pcap/$PCAP_FILE \
-      -o /data/zeek
+    pushd zeek
+      # rm -rf *
+      echo docker run \
+        --rm \
+        -v $PCAP_DIR:/data/pcap \
+        -v $PROJECT_ROOT/data/ingest/zeek:/data/zeek \
+        $ZEEK_DOCKER_IMAGE \
+        $ZEEK_COMMAND
+    popd
   fi
-
 popd
 
+zeek -C -r /data/pcap/$PCAP_FILE LogAscii::use_json=T
+zeek -C -o zeek -r pcap/dns-remoteshell.pcap LogAscii::use_json=T
 
-
+zeek -C -r pcap/dns-remoteshell.pcap
 # NOTES:
 #  - https://docs.zeek.org/en/master/install.html
 #  - https://github.com/zeek/zeek/blob/master/docker/Dockerfile
