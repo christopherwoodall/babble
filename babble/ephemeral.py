@@ -19,7 +19,7 @@ def input_loop():
         try:
             user_input = urllib.parse.urlencode({"text": user_input})
             # generation = model.autocomplete(user_input)
-            generation = http.client.HTTPConnection("127.0.0.1", 9900)
+            generation = http.client.HTTPConnection("127.0.0.1", 9000)
             generation.request("GET", "/", user_input)
             generation = generation.getresponse().read()
         except Exception as e:
@@ -32,8 +32,8 @@ def input_loop():
 def main():
     # action = EphemeralAction()
     print("Hello world!")
-    server.serve(9900)
-    # server_thread = Thread(target=server.serve, args=(9900,), daemon=True)
+    server.serve(9000)
+    # server_thread = Thread(target=server.serve, args=(9000,), daemon=True)
     # input_thread = Thread(target=input_loop, args=())
     # server_thread.start()
     # input_thread.start()
