@@ -93,6 +93,22 @@ venv:	## Setup a Virtual Environment
 -	$(call Environment,./venv)
 
 
+.PHONY: run-extension
+run-extension: ## Run babble extension in Firefox
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
+-	echo "🦊 Launching babble extension..."
+-	web-ext run
+# -	web-ext run -s src/extension
+
+
+.PHONE: build-extension
+# https://extensionworkshop.com/documentation/manage/updating-your-extension/#enable-update
+build-extension: ## Build babble extension for Firefox
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
+-	echo "🦊 Building babble extension..."
+-	web-ext sign --channel unlisted
+
+
 PHONY: model-server
 model-server: ## Host a model server on localhost:9000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
