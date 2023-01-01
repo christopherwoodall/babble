@@ -11,8 +11,11 @@
 ```bash
 export SPLUNKBASE_USERNAME=<YOUR USERNAME>
 export SPLUNKBASE_PASSWORD=<YOUR PASSWORD>
-docker compose up
 # Navigate to http://localhost:8000
+docker compose up
+docker compose --profile siem-server up
+# Navigate to http://localhost:9000
+docker compose up babble
 ```
 
 
