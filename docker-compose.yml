@@ -22,7 +22,6 @@ services:
       - DEBUG=true
 
     volumes:
-      - ./default.yml:/tmp/defaults/default.yml:z
       - ./data:/data:z
       - ./data/splunk/var:/opt/splunk/var:z
       - ./data/splunk/etc:/opt/splunk/etc:z
