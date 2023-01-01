@@ -1,4 +1,5 @@
 ---
+# https://splunk.github.io/docker-splunk/ADVANCED.html#runtime-configuration
 
 config:
   baked: default.yml
