@@ -40,19 +40,24 @@ else
     FILENAME=`basename $PCAP_FILE`
     OUTPUT_DIR="${ZEEK_DIR}/`echo $FILENAME | sed 's/\.pcap$//g'`"
 
-    echo "Running Zeek on ${PCAP_FILE}"
+    echo "Processing ${FILENAME}..."
 
-    mkdir -p $OUTPUT_DIR
-    docker run                     \
-      --rm                         \
-      --volume `pwd`/data:/data:z  \
-      --workdir /$OUTPUT_DIR       \
-      $ZEEK_DOCKER_IMAGE           \
-      zeek                         \
-        --no-checksums             \
-        --readfile /${PCAP_FILE}   \
-        LogAscii::use_json=T       \
-        local
+    if [[ -d $OUTPUT_DIR ]]; then
+      echo "Output directory already exists. Skipping..."
+    else
+      echo "Running Zeek on ${PCAP_FILE}..."
+      mkdir -p $OUTPUT_DIR
+      docker run                     \
+        --rm                         \
+        --volume `pwd`/data:/data:z  \
+        --workdir /$OUTPUT_DIR       \
+        $ZEEK_DOCKER_IMAGE           \
+        zeek                         \
+          --no-checksums             \
+          --readfile /${PCAP_FILE}   \
+          LogAscii::use_json=T       \
+          local
+    fi
   popd
 fi
 
