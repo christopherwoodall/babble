@@ -70,7 +70,6 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
 
 ### Environments
   - Splunk
-    - https://docs.splunk.com/Documentation/StreamApp/8.1.0/DeployStreamApp/DeploymentArchitecture
     - https://docs.splunk.com/Documentation/StreamApp/8.1.0/DeployStreamApp/UseStreamtoparsePCAPfiles
     - https://gosplunk.com/
     - https://github.com/clong/DetectionLab
