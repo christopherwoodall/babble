@@ -36,8 +36,6 @@ pushd $PROJECT_ROOT
     echo "Running Zeek on ${PCAP_FILE}"
 
     docker run                     \
-      # -it                        \
-      # --entrypoint /bin/bash     \
       --rm                         \
       --volume `pwd`/data:/data:z  \
       --workdir $ZEEK_DIR          \
