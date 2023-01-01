@@ -6,6 +6,7 @@ __private__/
 data/splunk/etc/*
 !data/splunk/etc/.gitkeep
 !data/splunk/etc/splunk-launch.conf
+!data/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf
 
 data/splunk/var/*
 !data/splunk/var/.gitkeep
