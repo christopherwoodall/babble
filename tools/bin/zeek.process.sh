@@ -6,8 +6,6 @@ if ! command -v git &> /dev/null; then
     exit 1
 fi
 
-echo $(dirname "$0")
-
 # Fixes Github Action error, "tput: No value for $TERM and no -T specified",
 # that occurs When $TERM is empty (non-interactive shell) by faking a value
 # for the terminal profile.
