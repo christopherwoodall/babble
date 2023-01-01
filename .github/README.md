@@ -24,6 +24,13 @@ babble
 ```
 
 
+### Parsing PCAP w/ Zeek
+```bash
+chmod +x tools/bin/zeek.process.sh
+./tools/bin/zeek.process.sh
+```
+
+
 ---
 # DEMO
 
