@@ -17,6 +17,7 @@ services:
       - ./data:/data:z
       - ./data/splunk/var:/opt/splunk/var:z
       - ./data/splunk/etc:/opt/splunk/etc:z
+      # - ./data/splunk/etc/splunk-launch.conf:/opt/splunk/etc/splunk-launch.conf:z
 
 
     ports:
