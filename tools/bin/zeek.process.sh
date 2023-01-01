@@ -46,9 +46,9 @@ pushd $PROJECT_ROOT
           LogAscii::use_json=T                  \
           local
 
-        mv \
-          "${PROJECT_ROOT}/data/ingest/pcap/${PCAP_FILE}" \
-          "${PROJECT_ROOT}/data/ingest/pcap/unprocessed_files/${PCAP_FILE}"
+        # mv \
+        #   "${PROJECT_ROOT}/data/ingest/pcap/${PCAP_FILE}" \
+        #   "${PROJECT_ROOT}/data/ingest/pcap/unprocessed_files/${PCAP_FILE}"
     popd
   fi
 popd
