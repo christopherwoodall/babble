@@ -22,10 +22,10 @@ services:
       python3 -m babble"
 
 
-  # docker compose --profile siem-server up
+  # docker compose --profile test-siem up
   splunk:
     image: splunk/splunk:latest
-    profiles: ["siem-server"]
+    profiles: ["test-siem"]
     # depends_on:
     #   - babble
 
