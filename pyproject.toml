@@ -13,6 +13,7 @@ readme      = ".github/README.md"
 license     = "MIT"
 
 dependencies = [
+    "black",
     "flask",
     "torch",
     "tensorflow",
