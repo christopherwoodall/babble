@@ -38,7 +38,7 @@ document.querySelector("form").onsubmit = (event) => {
         console.log(`Query text: ${query_text}`);
         let query_params = `query: ${encodeURIComponent(query_text)}`;
 
-          fetch(`http://127.0.0.1:9900/?text=${query_params}`)
+          fetch(`http://127.0.0.1:9000/?text=${query_params}`)
             .then( response => response.json() )
             .then( response => {
               console.log(response);

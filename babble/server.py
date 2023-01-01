@@ -29,7 +29,7 @@ def arguments():
     return jsonify(out)
 
 
-def serve(port: int = 9900):
+def serve(port: int = 9000):
     app.run(
         host="0.0.0.0",
         port=port,
