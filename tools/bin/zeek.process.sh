@@ -7,8 +7,9 @@ if ! command -v git &> /dev/null; then
 fi
 
 PROJECT_ROOT=`git rev-parse --show-toplevel`
-PCAP_DIR="data/ingest/pcap/"
 ZEEK_DOCKER_IMAGE="zeekurity/zeek:latest"
+ZEEK_DIR="data/ingest/zeek"
+PCAP_DIR="data/ingest/pcap/"
 
 # Fixes Github Action error, "tput: No value for $TERM and no -T specified",
 # that occurs When $TERM is empty (non-interactive shell) by faking a value
@@ -33,7 +34,7 @@ pushd $PROJECT_ROOT
   else
     PCAP_FILE=$1
     echo "Running Zeek on ${PCAP_FILE}"
-    pushd zeek
+    pushd "${ZEEK_DIR}"
       echo docker run                           \
         --rm                                    \
         --workdir /data/zeek                    \
