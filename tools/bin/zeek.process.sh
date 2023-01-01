@@ -31,9 +31,16 @@ pushd $PROJECT_ROOT
       ./$0 $PCAP_FILE
     done
   else
-    echo "Running Zeek on $1"
     PCAP_FILE=$1
-    echo "docker run --rm -v $PCAP_DIR:/data/pcap -v $PROJECT_ROOT/data/ingest/zeek:/data/zeek $ZEEK_DOCKER_IMAGE -C -r /data/pcap/$PCAP_FILE -o /data/zeek"
+    echo "Running Zeek on ${PCAP_FILE}"
+    echo docker run \
+      --rm \
+      -v $PCAP_DIR:/data/pcap \
+      -v $PROJECT_ROOT/data/ingest/zeek:/data/zeek \
+      $ZEEK_DOCKER_IMAGE \
+      -C \
+      -r /data/pcap/$PCAP_FILE \
+      -o /data/zeek
   fi
 
 popd
