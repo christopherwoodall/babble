@@ -2,8 +2,25 @@
 version: "3.6"
 
 services:
+  # docker compose --profile model-server up
+  babble:
+    image: nvidia/cuda:11.3.0-runtime-ubuntu20.04
+    profiles: ["model-server"]
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app:z
+    ports:
+      - 9000:9000
+    command: /bin/bash -c "python3 -m pip install --upgrade pip && python3 -m pip install -e . && python3 -m babble"
+
+
+  # docker compose --profile siem-server up
   splunk:
     image: splunk/splunk:latest
+    profiles: ["siem-server"]
+    # depends_on:
+    #   - babble
 
     environment:
       - SPLUNK_START_ARGS=--accept-license
@@ -15,8 +32,8 @@ services:
       #   - Corelight App For Splunk (3884)
       #       https://api.splunkbase.splunk.com/api/v2/apps/3884/releases/2.4.5/download/?origin=sb&lead=true
       - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
-      - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER}
-      - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS}
+      - SPLUNKBASE_USERNAME=${SPLUNKBASE_USERNAME}
+      - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASSWORD}
       - SPLUNK_USER=root
       - SPLUNK_PASSWORD=changeme
       - DEBUG=true
@@ -30,8 +47,3 @@ services:
 
     ports:
       - 8000:8000
-
-
-  # TODO: Add a container for app
-  # babble:
-  #   image: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
