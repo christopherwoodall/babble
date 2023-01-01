@@ -4,8 +4,8 @@ import urllib
 
 from threading import Thread
 
-from . import model
-from . import server
+from babble import model
+from babble import server
 
 
 class EphemeralAction:
