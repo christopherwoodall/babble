@@ -7,13 +7,8 @@ services:
       # Install the required apps from local and remote(Splunkbase) repositories:
       #   - Add-on for Stream Forwarders (5238)
       #   - TA for Zeek (5466)
-      #   - PCAP Analyzer for Splunk (2748)
-      #       https://schwartzdaniel.com/pcap-analyzer-for-splunk-getting-started/
-      #       https://api.splunkbase.splunk.com/api/v2/apps/2748/releases/4.2.6/download/?origin=sb&lead=true
-      #   - Splunk App for Stream (1809)
-      #       https://api.splunkbase.splunk.com/api/v2/apps/1809/releases/8.1.0/download/?origin=sb&lead=true,
-      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/2748/releases/4.2.6/download/?origin=sb&lead=true
-      # - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER:-splunk}
+      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
+      - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER:-splunk}
       - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS:-changeme}
       - SPLUNK_USER=root
       - SPLUNK_PASSWORD=changeme
@@ -30,9 +25,11 @@ services:
       - 8000:8000
 
 
-# Documentation:
-#  - https://hub.docker.com/r/splunk/splunk/
-#  - https://splunk.github.io/docker-splunk/
-#  - https://github.com/splunk/botsv3
+  # TODO: Add a container for app
+  # babble:
+  #   image: python:3.10
+
+
+# NOTES:
 #  - https://splunk.github.io/docker-splunk/advanced/APP_INSTALL.html#volume-mount-app-directory
 #
