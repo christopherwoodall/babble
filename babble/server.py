@@ -21,7 +21,7 @@ app = Flask(
 def arguments():
     text = request.args.get("text", "")
     if not text:
-        return Path(Path(__file__).parent / "www/index.html").read_text(
+        return Path(Path(__file__).parent / "data" / "www" / "index.html").read_text(
             encoding="utf-8"
         )
 
@@ -35,5 +35,5 @@ def serve(port: int = 9000):
     app.run(
         host="0.0.0.0",
         port=port,
-        # debug=True,
+        debug=True,
     )
