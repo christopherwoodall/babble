@@ -3,7 +3,7 @@
 etc/*
 !etc/.gitkeep
 !etc/splunk-launch.conf
-
+# TODO: Remove this once we have a better allow list implementation
 !etc/streamfwd.conf
 # !etc/apps/splunk_app_stream/local/streamfwd.conf
 
