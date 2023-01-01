@@ -1,0 +1,16 @@
+# TODO: Better allow list implementation for local development
+
+etc/*
+!etc/.gitkeep
+
+# !etc/apps/splunk_app_stream/README.txt
+# !etc/apps/splunk_app_stream/local/streamfwd.conf
+
+
+# data/splunk/etc/*
+# !data/splunk/
+# !data/splunk/etc/splunk-launch.conf
+# !data/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf
+
+# data/splunk/var/*
+# !data/splunk/var/.gitkeep
