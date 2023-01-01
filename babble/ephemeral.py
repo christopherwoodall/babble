@@ -1,4 +1,3 @@
-
 import sys
 import http
 import urllib
@@ -10,37 +9,37 @@ from . import server
 
 
 class EphemeralAction:
-  def __init__(self):
-    ...
+    def __init__(self):
+        ...
 
 
 def input_loop():
-  while (user_input := input("QUERY: ")) != 'q':
-    print(f'You typed: {user_input}')
-    try:
-      user_input = urllib.parse.urlencode({"text": user_input})
-      # generation = model.autocomplete(user_input)
-      generation = http.client.HTTPConnection("127.0.0.1", 9900)
-      generation.request("GET", "/", user_input)
-      generation = generation.getresponse().read()
-    except Exception as e:
-      print(f'Error: {e}')
-      generation = 'FAILED'
-    print(f'Generation: {generation}')
-  return sys.exit()
+    while (user_input := input("QUERY: ")) != "q":
+        print(f"You typed: {user_input}")
+        try:
+            user_input = urllib.parse.urlencode({"text": user_input})
+            # generation = model.autocomplete(user_input)
+            generation = http.client.HTTPConnection("127.0.0.1", 9900)
+            generation.request("GET", "/", user_input)
+            generation = generation.getresponse().read()
+        except Exception as e:
+            print(f"Error: {e}")
+            generation = "FAILED"
+        print(f"Generation: {generation}")
+    return sys.exit()
 
 
 def main():
-  # action = EphemeralAction()
-  print('Hello world!')
-  server.serve(9900)
-  # server_thread = Thread(target=server.serve, args=(9900,), daemon=True)
-  # input_thread = Thread(target=input_loop, args=())
-  # server_thread.start()
-  # input_thread.start()
-  # server_thread.join()
-  # server_thread.join()
+    # action = EphemeralAction()
+    print("Hello world!")
+    server.serve(9900)
+    # server_thread = Thread(target=server.serve, args=(9900,), daemon=True)
+    # input_thread = Thread(target=input_loop, args=())
+    # server_thread.start()
+    # input_thread.start()
+    # server_thread.join()
+    # server_thread.join()
 
 
-if __name__ == '__main__':
-  main()
+if __name__ == "__main__":
+    main()

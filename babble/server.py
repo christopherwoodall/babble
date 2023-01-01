@@ -17,11 +17,13 @@ app = Flask(
 )
 
 
-@app.route("/", methods=['GET'])
+@app.route("/", methods=["GET"])
 def arguments():
     text = request.args.get("text", "")
     if not text:
-        return Path(Path(__file__).parent / "www/index.html").read_text(encoding='utf-8')
+        return Path(Path(__file__).parent / "www/index.html").read_text(
+            encoding="utf-8"
+        )
 
     text = urllib.parse.unquote(text)
     generation = model.autocomplete(text)
@@ -35,4 +37,3 @@ def serve(port: int = 9000):
         port=port,
         # debug=True,
     )
-

@@ -1,8 +1,10 @@
-
 from pathlib import Path
 
+
 def get(query: str):
-    return Path(Path(__file__).parent.parent / "data/security_onion_prompt.md").read_text(encoding='utf-8')[:(1024 - len(query))]
+    return Path(
+        Path(__file__).parent.parent / "data/security_onion_prompt.md"
+    ).read_text(encoding="utf-8")[: (1024 - len(query))]
 
 
 ##################################################################
