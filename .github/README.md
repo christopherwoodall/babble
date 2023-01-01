@@ -3,7 +3,6 @@
 ![](docs/assets/logo.png)
 
 
-
 ---
 ## Installation
 
