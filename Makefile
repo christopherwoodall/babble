@@ -21,6 +21,12 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = -
 
+
+PROJECT_DIR := $(shell pwd)
+SRC_DIR     := $(PROJECT_DIR)/src
+BUILD_DIR   := $(PROJECT_DIR)/build
+
+
 ifeq ($(OS),Windows_NT)
 SHELL := powershell.exe
 .SHELLFLAGS := -NoProfile -Command
