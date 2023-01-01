@@ -12,8 +12,8 @@ from . import model
 
 app = Flask(
     __name__,
-    static_folder=Path(__file__).parent / "www/assets",
-    template_folder=Path(__file__).parent / "www",
+    template_folder=Path(__file__).parent / "data/www",
+    static_folder=Path(__file__).parent / "data/www/assets",
 )
 
 
