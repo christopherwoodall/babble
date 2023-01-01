@@ -31,7 +31,6 @@ def input_loop():
 
 def main():
     # action = EphemeralAction()
-    print("Hello world!")
     server.serve(9000)
     # server_thread = Thread(target=server.serve, args=(9000,), daemon=True)
     # input_thread = Thread(target=input_loop, args=())
