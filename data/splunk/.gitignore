@@ -33,5 +33,5 @@ etc/apps/Splunk_TA_zeek/local/*
 !etc/apps/Splunk_TA_zeek/local/props.conf
 
 
-var/*
-!var/.gitkeep
+# var/*
+# !var/.gitkeep
