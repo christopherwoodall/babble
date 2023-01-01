@@ -41,5 +41,5 @@ popd
 
 
 # NOTES:
-#   - https://docs.zeek.org/en/master/install.html
-
+#  - https://docs.zeek.org/en/master/install.html
+#  - https://github.com/zeek/zeek/blob/master/docker/Dockerfile
