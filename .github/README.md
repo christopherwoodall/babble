@@ -1,4 +1,9 @@
 # 🚧 Work In Progress! 🚧
+
+![](docs/assets/logo.png)
+
+
+
 ---
 ## Installation
 
