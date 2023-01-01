@@ -49,6 +49,18 @@ update: ## git pull branch
 -	git pull origin `git config --get remote.origin.url`
 
 
+PHONY: model-server
+model-server: ## Host a model server on localhost:9000
+-	echo -e "\033[36mUpdating branch...\033[0m"
+-	docker compose up babble
+
+
+PHONY: test-siem
+test-siem: ## Launch a test SIEM on localhost:8000
+-	echo -e "\033[36mUpdating branch...\033[0m"
+-	docker compose --profile test-siem up
+
+
 .PHONY: venv
 venv:	## WIP: Setup a Virtual Environment
 -	echo -e "\033[36mSetting up virtual environment...\033[0m"
