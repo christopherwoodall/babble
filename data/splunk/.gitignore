@@ -10,6 +10,12 @@ etc/*
 !etc/.gitkeep
 !etc/splunk-launch.conf
 
+!etc/system/
+etc/system/*
+!etc/system/local/
+etc/system/local/*
+!etc/system/local/inputs.conf
+
 !etc/apps/
 etc/apps/*
 
