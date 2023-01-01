@@ -2,6 +2,7 @@
 version: "3.6"
 
 services:
+  # docker compose up babble
   # docker compose --profile model-server up
   babble:
     image: nvidia/cuda:11.3.0-runtime-ubuntu20.04
