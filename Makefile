@@ -71,29 +71,34 @@ help: ## List commands
 
 PHONY: update
 update: ## git pull branch
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	echo "🆕 Updating branch..."
 -	git pull origin `git config --get remote.origin.url`
 
 
 PHONY: model-server
 model-server: ## Host a model server on localhost:9000
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	echo "🫧 Updating branch..."
 -	docker compose up babble
 
 
 PHONY: test-siem
 test-siem: ## Launch a test SIEM on localhost:8000
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	echo "🌐 Updating branch..."
 -	docker compose --profile test-siem up
 
 
 .PHONY: venv
 venv:	## Setup a Virtual Environment
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	$(call Environment,./venv)
 
 
 .PHONY: lint
 lint: ## Lint the code
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	$(call Lint,./babble)
 
 
