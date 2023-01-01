@@ -19,11 +19,11 @@ etc/system/local/*
 !etc/apps/
 etc/apps/*
 
-!etc/apps/splunk_app_stream/
-etc/apps/splunk_app_stream/*
-!etc/apps/splunk_app_stream/local/
-etc/apps/splunk_app_stream/local/*
-!etc/apps/splunk_app_stream/local/streamfwd.conf
+!etc/apps/Splunk_TA_stream/
+etc/apps/Splunk_TA_stream/*
+!etc/apps/Splunk_TA_stream/local/
+etc/apps/Splunk_TA_stream/local/*
+!etc/apps/Splunk_TA_stream/local/streamfwd.conf
 
 
 var/*

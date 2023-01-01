@@ -24,7 +24,7 @@ services:
       - ./data/splunk/var:/opt/splunk/var:z
       - ./data/splunk/etc:/opt/splunk/etc:z
       # - ./data/splunk/etc/splunk-launch.conf:/opt/splunk/etc/splunk-launch.conf:z
-      # - ./data/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf:/opt/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf:z
+      # - ./data/splunk/etc/apps/Splunk_TA_stream/local/streamfwd.conf:/opt/splunk/etc/apps/Splunk_TA_stream/local/streamfwd.conf:z
 
     ports:
       - 8000:8000
