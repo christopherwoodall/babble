@@ -3,6 +3,9 @@ venv/
 __private__/
 
 
+# Artifacts
+logs/
+
 # Data Ingest Pipeline
 !data/ingest/.gitignore
 
