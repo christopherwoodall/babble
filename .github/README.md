@@ -74,6 +74,7 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
     - `winrm_psremote_05-16.pcap`
 
   - https://github.com/sbousseaden/PCAP-ATTACK
+    - `cmds over dns txt queries and reponses.pcap`
 
   - https://www.netresec.com/?page=PcapFiles
 
