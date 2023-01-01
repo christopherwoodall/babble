@@ -1,11 +1,18 @@
 # TODO: Better allow list implementation for local development
 
+apps/*
+
+
+todo/*
+
+
 etc/*
 !etc/.gitkeep
 !etc/splunk-launch.conf
 
 !etc/apps/
 etc/apps/*
+
 !etc/apps/splunk_app_stream/
 etc/apps/splunk_app_stream/*
 !etc/apps/splunk_app_stream/local/
