@@ -89,6 +89,11 @@ model-server: ## Host a model server on localhost:9000
 -	docker compose up babble
 
 
+## TODO: Zeek preprocessing
+# chmod +x tools/bin/zeek.process.sh
+# ./tools/bin/zeek.process.sh
+
+
 PHONY: test-siem
 test-siem: ## Launch a test SIEM on localhost:8000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
