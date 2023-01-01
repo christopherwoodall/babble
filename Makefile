@@ -79,14 +79,14 @@ update: ## git pull branch
 PHONY: model-server
 model-server: ## Host a model server on localhost:9000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
--	echo "🫧 Updating branch..."
+-	echo "🫧 Launching babble server..."
 -	docker compose up babble
 
 
 PHONY: test-siem
 test-siem: ## Launch a test SIEM on localhost:8000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
--	echo "🌐 Updating branch..."
+-	echo "🌐 Launching SIEM..."
 -	docker compose --profile test-siem up
 
 
@@ -97,7 +97,7 @@ venv:	## Setup a Virtual Environment
 
 
 .PHONY: lint
-lint: ## Lint the code
+lint: clean ## Lint the code
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	$(call Lint,./babble)
 
