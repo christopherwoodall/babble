@@ -9,7 +9,9 @@ services:
       #       https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true
       #   - TA for Zeek (5466)
       #       https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
-      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
+      #   - Corelight App For Splunk (3884)
+      #       https://api.splunkbase.splunk.com/api/v2/apps/3884/releases/2.4.5/download/?origin=sb&lead=true
+      - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/3884/releases/2.4.5/download/?origin=sb&lead=true
       - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER}
       - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS}
       - SPLUNK_USER=root
