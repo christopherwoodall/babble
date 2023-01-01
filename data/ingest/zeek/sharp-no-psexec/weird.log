@@ -1,1 +1,1 @@
-{"ts":1621892259.931851,"uid":"CiNqKb1We75v19ZVZd","id.orig_h":"10.0.0.3","id.orig_p":61424,"id.resp_h":"10.0.0.2","id.resp_p":49158,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
+{"ts":1621892259.931851,"uid":"Ckj6mz2FFnU1it60Al","id.orig_h":"10.0.0.3","id.orig_p":61424,"id.resp_h":"10.0.0.2","id.resp_p":49158,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
