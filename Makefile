@@ -4,7 +4,7 @@
 SHELL         := /bin/bash
 .SHELLFLAGS   := -eu -o pipefail -c
 .DEFAULT_GOAL := help
-.LOGGING      := 1
+.LOGGING      := 0
 
 .ONESHELL:             ;  # Recipes execute in same shell
 .NOTPARALLEL:          ;  # Wait for this target to finish
@@ -82,6 +82,11 @@ update: ## git pull branch
 -	git pull origin `git config --get remote.origin.url`
 
 
+.PHONY: run
+run: ## Run babble
+-	babble
+
+
 .PHONY: venv
 venv:	## Setup a Virtual Environment
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
@@ -121,3 +126,9 @@ clean: ## Remove build, test, coverage and Python artifacts
 .PHONY: windows
 windows: ## WIP: Install Windows dependencies
 -	$(error This feature is not yet available.)
+
+
+.PHONY: container-env
+container-env: ## Babble installer for docker-compose
+-	python3 -m pip install --upgrade pip
+-	python3 -m pip install -e .

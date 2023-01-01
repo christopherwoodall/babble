@@ -17,12 +17,11 @@ services:
       - 9000:9000
 
     command: >
-      /bin/bash -c " \
-        apt-get update                                && \
-        apt-get install -y git python3.9 python3-pip  && \
-        python3 -m pip install --upgrade pip          && \
-        python3 -m pip install -e .                   && \
-      babble"
+      /bin/bash -c "\
+        apt-get update && \
+        apt-get install -y git make python3.9 python3-pip && \
+        make container-env && \
+        make run"
 
 
   # docker compose --profile test-siem up
