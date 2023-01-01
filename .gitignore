@@ -1,9 +1,12 @@
+# Developer Settings
 venv/
 __private__/
 
-
+# Splunk Settings & Data
 data/splunk/etc/*
 !data/splunk/etc/.gitkeep
+!data/splunk/etc/splunk-launch.conf
+
 data/splunk/var/*
 !data/splunk/var/.gitkeep
 
