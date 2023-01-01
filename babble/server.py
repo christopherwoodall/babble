@@ -7,7 +7,7 @@ from pathlib import Path
 
 from flask import Flask, request, jsonify
 
-from . import model
+from babble import model
 
 
 app = Flask(
