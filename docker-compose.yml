@@ -8,8 +8,8 @@ services:
       #   - Add-on for Stream Forwarders (5238)
       #   - TA for Zeek (5466)
       - SPLUNK_APPS_URL=https://api.splunkbase.splunk.com/api/v2/apps/5238/releases/8.1.0/download/?origin=sb&lead=true,https://api.splunkbase.splunk.com/api/v2/apps/5466/releases/1.0.5/download/?origin=sb&lead=true
-      - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER:-splunk}
-      - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS:-changeme}
+      - SPLUNKBASE_USERNAME=${SPLUNKBASE_USER}
+      - SPLUNKBASE_PASSWORD=${SPLUNKBASE_PASS}
       - SPLUNK_USER=root
       - SPLUNK_PASSWORD=changeme
       - DEBUG=true
