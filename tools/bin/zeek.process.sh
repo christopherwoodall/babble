@@ -34,22 +34,22 @@ pushd $PROJECT_ROOT
   else
     PCAP_FILE=$1
     echo "Running Zeek on ${PCAP_FILE}"
-    pushd "${ZEEK_DIR}"
-      echo docker run                           \
-        --rm                                    \
-        --workdir /data/zeek                    \
-        -v data:/data:z                         \
-        $ZEEK_DOCKER_IMAGE                      \
-        zeek                                    \
-          --no-checksums                        \
-          --readfile /${PCAP_DIR}/${PCAP_FILE}  \
-          LogAscii::use_json=T                  \
-          local
 
-        # mv \
-        #   "${PROJECT_ROOT}/data/ingest/pcap/${PCAP_FILE}" \
-        #   "${PROJECT_ROOT}/data/ingest/pcap/unprocessed_files/${PCAP_FILE}"
-    popd
+    docker run                                \
+      --rm                                    \
+      --workdir /data/zeek                    \
+      -v data:/data:z                         \
+      $ZEEK_DOCKER_IMAGE                      \
+      zeek                                    \
+        --no-checksums                        \
+        --readfile /${PCAP_DIR}/${PCAP_FILE}  \
+        LogAscii::use_json=T                  \
+        local
+
+      # mv \
+      #   "${PROJECT_ROOT}/${PCAP_DIR}/${PCAP_FILE}" \
+      #   "${PROJECT_ROOT}/${PCAP_DIR}/unprocessed_files/${PCAP_FILE}"
+
   fi
 popd
 
