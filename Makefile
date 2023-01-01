@@ -76,6 +76,12 @@ update: ## git pull branch
 -	git pull origin `git config --get remote.origin.url`
 
 
+.PHONY: venv
+venv:	## Setup a Virtual Environment
+-	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
+-	$(call Environment,./venv)
+
+
 PHONY: model-server
 model-server: ## Host a model server on localhost:9000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
@@ -88,12 +94,6 @@ test-siem: ## Launch a test SIEM on localhost:8000
 -	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
 -	echo "🌐 Launching SIEM..."
 -	docker compose --profile test-siem up
-
-
-.PHONY: venv
-venv:	## Setup a Virtual Environment
--	$(call Logging,./logs/$(shell date +%Y-%m-%d-%H-%M-%S).log)
--	$(call Environment,./venv)
 
 
 .PHONY: lint
