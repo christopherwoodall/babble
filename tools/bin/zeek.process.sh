@@ -50,3 +50,4 @@ popd
 # NOTES:
 #  - https://docs.zeek.org/en/master/install.html
 #  - https://github.com/zeek/zeek/blob/master/docker/Dockerfile
+#  - docker run --rm -it --entrypoint /bin/bash -v `pwd`:/app:z zeekurity/zeek:latest
