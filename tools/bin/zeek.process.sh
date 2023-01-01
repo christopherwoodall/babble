@@ -6,15 +6,17 @@ if ! command -v git &> /dev/null; then
     exit 1
 fi
 
-PROJECT_ROOT=`git rev-parse --show-toplevel`
-ZEEK_DOCKER_IMAGE="zeekurity/zeek:latest"
-ZEEK_DIR="data/ingest/zeek"
-PCAP_DIR="data/ingest/pcap"
+echo $(dirname "$0")
 
 # Fixes Github Action error, "tput: No value for $TERM and no -T specified",
 # that occurs When $TERM is empty (non-interactive shell) by faking a value
 # for the terminal profile.
 [[ ${TERM}=="" ]] && export TERM='xterm-256color'
+
+PROJECT_ROOT=`git rev-parse --show-toplevel`
+ZEEK_DOCKER_IMAGE="zeekurity/zeek:latest"
+ZEEK_DIR="data/ingest/zeek"
+PCAP_DIR="data/ingest/pcap"
 
 
 pushd $PROJECT_ROOT
@@ -38,12 +40,12 @@ pushd $PROJECT_ROOT
     docker run                     \
       --rm                         \
       --volume `pwd`/data:/data:z  \
-      --workdir $ZEEK_DIR          \
+      --workdir /$ZEEK_DIR         \
       $ZEEK_DOCKER_IMAGE           \
       zeek                         \
-        --no-checksums                        \
-        --readfile /${PCAP_DIR}/${PCAP_FILE}  \
-        LogAscii::use_json=T                  \
+        --no-checksums             \
+        --readfile /${PCAP_FILE}   \
+        LogAscii::use_json=T       \
         local
   fi
 popd
