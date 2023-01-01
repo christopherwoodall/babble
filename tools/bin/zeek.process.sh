@@ -28,7 +28,7 @@ pushd $PROJECT_ROOT
     echo "No pcap file specified. Running Zeek on all pcaps in $PCAP_DIR"
     PCAP_FILES=`find $PCAP_DIR -type f -name "*.pcap"`
     for PCAP_FILE in $PCAP_FILES; do
-      ./$0 $PCAP_FILE
+      $0 $PCAP_FILE
     done
   else
     PCAP_FILE=$1
@@ -44,8 +44,10 @@ pushd $PROJECT_ROOT
           --readfile /${PCAP_DIR}/${PCAP_FILE}  \
           LogAscii::use_json=T                  \
           local
-        mv "${PROJECT_ROOT}/data/ingest/pcap/unprocessed_files/${PCAP_FILE}"
 
+        mv \
+          "${PROJECT_ROOT}/data/ingest/pcap/${PCAP_FILE}" \
+          "${PROJECT_ROOT}/data/ingest/pcap/unprocessed_files/${PCAP_FILE}"
     popd
   fi
 popd
