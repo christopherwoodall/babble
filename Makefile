@@ -27,9 +27,14 @@ SHELL := powershell.exe
 endif
 
 
+define Lint
+	echo -e "🐍 \033[36mLinting project code...\033[0m"
+	python3 -m black $1
+endef
+
+
 default: $(.DEFAULT_GOAL)
 all: help
-
 
 .PHONY: help
 help: ## List commands
@@ -51,8 +56,7 @@ venv:	## WIP: Setup a Virtual Environment
 
 .PHONY: lint
 lint: ## Lint the code
--	echo -e "\033[36mLinting the code...\033[0m"
-- ./tools/pre-commit.sh
+-	$(call Lint,./babble)
 
 
 ##
