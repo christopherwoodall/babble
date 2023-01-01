@@ -2,6 +2,7 @@
 
 etc/*
 !etc/.gitkeep
+!etc/splunk-launch.conf
 
 # !etc/apps/splunk_app_stream/README.txt
 # !etc/apps/splunk_app_stream/local/streamfwd.conf
@@ -12,5 +13,5 @@ etc/*
 # !data/splunk/etc/splunk-launch.conf
 # !data/splunk/etc/apps/splunk_app_stream/local/streamfwd.conf
 
-# data/splunk/var/*
-# !data/splunk/var/.gitkeep
+var/*
+!var/.gitkeep
