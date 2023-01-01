@@ -35,4 +35,4 @@ services:
 
   # TODO: Add a container for app
   # babble:
-  #   image: python:3.10
+  #   image: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
