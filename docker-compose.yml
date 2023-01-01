@@ -24,7 +24,6 @@ services:
     volumes:
       - ./data:/data:z
       - ./data/splunk/etc:/opt/splunk/etc:z
-      # - ./data/splunk/var:/opt/splunk/var:z
       # - ./data/splunk/etc/splunk-launch.conf:/opt/splunk/etc/splunk-launch.conf:ro
       # - ./data/splunk/etc/apps/Splunk_TA_zeek/local/inputs.conf:/opt/splunk/etc/apps/Splunk_TA_zeek/local/inputs.conf:ro
       # - ./data/splunk/etc/apps/Splunk_TA_stream/local/streamfwd.conf:/opt/splunk/etc/apps/Splunk_TA_stream/local/streamfwd.conf:ro
