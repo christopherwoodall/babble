@@ -69,12 +69,16 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
 
 
 ### Environments
-  - https://github.com/clong/DetectionLab
+  - Splunk
+    - https://docs.splunk.com/Documentation/StreamApp/8.1.0/DeployStreamApp/DeploymentArchitecture
+    - https://docs.splunk.com/Documentation/StreamApp/8.1.0/DeployStreamApp/UseStreamtoparsePCAPfiles
+    - https://gosplunk.com/
+    - https://github.com/clong/DetectionLab
+    - https://blog.edie.io/2022/01/31/ingesting-pcap-files-with-zeek-and-splunk/
 
 
 ---
 ## Links
-  - https://gosplunk.com/
   - https://www.kdnuggets.com/2021/07/github-copilot-open-source-alternatives-code-generation.html
   - https://github.com/samrawal/emacs-secondmate/
   - ELK/KQL
