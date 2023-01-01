@@ -74,6 +74,7 @@ E.g. searching StackOverflow for answers. see [here](https://github.com/hieunc22
 
 ---
 ## Links
+  - https://gosplunk.com/
   - https://www.kdnuggets.com/2021/07/github-copilot-open-source-alternatives-code-generation.html
   - https://github.com/samrawal/emacs-secondmate/
   - ELK/KQL
