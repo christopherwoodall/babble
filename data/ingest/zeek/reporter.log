@@ -1,0 +1,2 @@
+{"ts":1105667516.216992,"level":"Reporter::ERROR","message":"no such index (Notice::tmp_notice_storage[Notice::uid])","location":"/usr/local/zeek/share/zeek/policy/frameworks/notice/extend-email/hostnames.zeek, line 49"}
+{"ts":1105667516.216992,"level":"Reporter::ERROR","message":"no such index (Notice::tmp_notice_storage[Notice::uid])","location":"/usr/local/zeek/share/zeek/policy/frameworks/notice/extend-email/hostnames.zeek, line 39"}
